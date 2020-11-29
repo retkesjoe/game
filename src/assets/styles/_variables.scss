@@ -1,0 +1,122 @@
+/* Font */
+$source-code-pro-font-path: './assets/fonts/source-code-pro/SourceCodePro-';
+
+@font-face {
+  src: url('#{$source-code-pro-font-path}Black.ttf') format('truetype');
+  font-family: 'SourceCodeProBlack';
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$source-code-pro-font-path}BlackItalic.ttf') format('truetype');
+  font-family: 'SourceCodeProBlackItalic';
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$source-code-pro-font-path}Bold.ttf') format('truetype');
+  font-family: 'SourceCodeProBold';
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$source-code-pro-font-path}BoldItalic.ttf') format('truetype');
+  font-family: 'SourceCodeProBoldItalic';
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$source-code-pro-font-path}ExtraLight.ttf') format('truetype');
+  font-family: 'SourceCodeProExtraLight';
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$source-code-pro-font-path}ExtraLightItalic.ttf') format('truetype');
+  font-family: 'SourceCodeProExtraLightItalic';
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$source-code-pro-font-path}Italic.ttf') format('truetype');
+  font-family: 'SourceCodeProItalic';
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$source-code-pro-font-path}Light.ttf') format('truetype');
+  font-family: 'SourceCodeProLight';
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$source-code-pro-font-path}LightItalic.ttf') format('truetype');
+  font-family: 'SourceCodeProLightItalic';
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$source-code-pro-font-path}Medium.ttf') format('truetype');
+  font-family: 'SourceCodeProMedium';
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$source-code-pro-font-path}MediumItalic.ttf') format('truetype');
+  font-family: 'SourceCodeProMediumItalic';
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$source-code-pro-font-path}Regular.ttf') format('truetype');
+  font-family: 'SourceCodeProRegular';
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$source-code-pro-font-path}SemiBold.ttf') format('truetype');
+  font-family: 'SourceCodeProSemiBold';
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$source-code-pro-font-path}SemiBoldItalic.ttf') format('truetype');
+  font-family: 'SourceCodeProSemiBoldItalic';
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-size: (
+  S: (
+    default: 13px,
+  ),
+  M: (
+    default: 14px
+  ),
+  L: (
+    default: 15px
+  ),
+  XL: (
+    default: 16px
+  ),
+  text: (
+    "h1": 3em,
+    "h2": 2.5em,
+    "h3": 2em,
+    "h4": 1.5em,
+    "h5": 1.25em,
+    "h6": 1.1em,
+    "p": 1em,
+    "span": 1em,
+  )
+);
+
+/* Layout */
+$layout-size:
+  'S' 576px,
+  'M' 768px,
+  'L' 992px,
+  'XL' 1200px;
+
+/* Color */
+$color-zeus: #27241D;

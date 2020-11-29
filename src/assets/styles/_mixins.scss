@@ -1,0 +1,7 @@
+@mixin text-based-element-font-size {
+  @each $domEl, $size in map-deep-get($font-size, 'text') {
+    #{$domEl} {
+      font-size: #{$size};
+    }
+  }
+}

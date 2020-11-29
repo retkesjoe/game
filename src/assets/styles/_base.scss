@@ -1,0 +1,52 @@
+html {
+  height: 100%;
+  font-size: 12px;
+
+  body {
+    min-height: 100%;
+    background-color: $color-zeus;
+
+    main {
+      height: 100vh;
+    }
+
+    * {
+      font-family: 'SourceCodeProExtraLight', sans-serif;
+    }
+  }
+}
+
+@each $layout, $max-size in $layout-size {
+  $index: index(($layout-size), ($layout $max-size));
+  $length: length($layout-size);
+
+  @if $index == 1 {
+    @media screen and (max-width: $max-size) {
+      html {
+        font-size: map-deep-get($font-size, $layout, 'default');
+        @include text-based-element-font-size;
+      }
+    }
+  } @else if $index < $length {
+    @media screen and (min-width: nth(nth($layout-size, $index - 1), 2) + 1) and (max-width: $max-size) {
+      html {
+        font-size: map-deep-get($font-size, $layout, 'default');
+        @include text-based-element-font-size;
+      }
+    }
+    
+  } @else {
+    @media screen and (min-width: nth(nth($layout-size, $index - 1), 2) + 1) and (max-width: $max-size) {
+      html {
+        font-size: map-deep-get($font-size, $layout, 'default');
+        @include text-based-element-font-size;
+      }
+    }
+    @media screen and (min-width: $max-size + 1) {
+      html {
+        font-size: map-deep-get($font-size, $layout, 'default');
+        @include text-based-element-font-size;
+      }
+    }
+  }
+}
