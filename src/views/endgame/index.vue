@@ -1,15 +1,15 @@
 <template>
-  <div class="splashscreen">
-    <Splashscreen posts />
+  <div class="game">
+    <Endscreen />
   </div>
 </template>
 
 <script lang="ts">
-import Splashscreen from "./components/splashscreen.vue";
+import Endscreen from "./components/endscreen.vue";
 
 export default {
   components: {
-    Splashscreen,
+    Endscreen,
   },
   setup(): void {
     console.log(process.env.NODE_ENV);

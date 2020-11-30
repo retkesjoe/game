@@ -8,7 +8,6 @@
 import GameBoard from "./components/game.vue";
 
 export default {
-  name: "Game",
   components: {
     GameBoard,
   },

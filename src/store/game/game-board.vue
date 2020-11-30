@@ -64,8 +64,10 @@ class Game {
 
         if (adjacentTile === 0) {
           state.gameBoard[adjacentRow][adjacentColumn] = 1;
+          ++state.lightsOn;
         } else {
           state.gameBoard[adjacentRow][adjacentColumn] = 0;
+          --state.lightsOn;
         }
       }
     }
@@ -75,7 +77,10 @@ class Game {
 const gameBoardInstance = new Game();
 
 const GameBoard = {
-  state: gameBoardInstance.gameBoard,
+  state: {
+    gameBoard: gameBoardInstance.gameBoard,
+    lightsOn: gameBoardInstance.numberOfTurnedOnLights,
+  },
   mutations: {
     adjTiles(state: GameBoardGrid, tileId: number): void {
       gameBoardInstance.setAdjacentTiles(state, tileId);

@@ -4,7 +4,6 @@ html {
 
   body {
     min-height: 100%;
-    background-color: $color-zeus;
 
     main {
       height: 100vh;
@@ -34,7 +33,7 @@ html {
         @include text-based-element-font-size;
       }
     }
-    
+
   } @else {
     @media screen and (min-width: nth(nth($layout-size, $index - 1), 2) + 1) and (max-width: $max-size) {
       html {

@@ -3,13 +3,16 @@
 </template>
 
 <script lang="ts">
+import router from "@/router";
+
 export default {
   methods: {
     setAdjacentTiles(item: Element): void {
-      console.log(item);
-      console.log("store commit: ", this.$store.commit("adjTiles", item.target.dataset.id));
-      /* console.log(this.store);
-      this.$store.commit("adjTiles", 1); */
+      this.$store.commit("adjTiles", item.target.dataset.id);
+
+      if (this.$store.state.lightsOn === 0) {
+        router.push("endgame");
+      }
     },
   },
 };

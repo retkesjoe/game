@@ -2,7 +2,7 @@ Todos:
   ☐ Write documentation.
   ☐ Splashscreen styling.
   ☐ Code refactor.
-  ☐ Create endgame screen.
+  ✔ Create endgame screen. @done(20-11-30 14:26)
   ☐ Rename functions, components, variables.
   ☐ Remove unnecessary codes.
   ☐ Write better statemanagement and mutation.

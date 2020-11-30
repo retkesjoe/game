@@ -9,7 +9,7 @@
 </style>
 
 <script lang="ts">
-import router from "../../../router";
+import router from "@/router";
 
 export default {
   name: "Splashscreen",

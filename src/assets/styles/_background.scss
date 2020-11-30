@@ -1,0 +1,147 @@
+@use "sass:string";
+
+html {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  overflow: hidden;
+}
+
+// n is number of stars required
+@function multiple-box-shadow ($n)  {
+  $value: '#{random(2000)}px #{random(2000)}px #f9f2bc';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #f9f2bc';
+  }
+
+  @return string.unquote($value)
+}
+
+$shadows-xs:  multiple-box-shadow(700);
+$shadows-s: multiple-box-shadow(200);
+$shadows-m:    multiple-box-shadow(100);
+$shadows-l:    multiple-box-shadow(50);
+$shadows-xl:    multiple-box-shadow(10);
+
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $shadows-xs;
+  animation: animStar 50s linear infinite;
+  border-radius: 50%;
+}
+#stars:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $shadows-xs;
+  border-radius: 50%;
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-s;
+  animation: animStar 100s linear infinite;
+  border-radius: 50%;
+}
+#stars2:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-s;
+  border-radius: 50%;
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $shadows-m;
+  animation: animStar 150s linear infinite;
+  border-radius: 50%;
+}
+#stars3:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $shadows-m;
+  border-radius: 50%;
+}
+
+#stars4 {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  box-shadow: $shadows-l;
+  animation: animStar 150s linear infinite;
+  border-radius: 50%;
+}
+#stars4:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  box-shadow: $shadows-l;
+  border-radius: 50%;
+}
+
+#stars5 {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  box-shadow: $shadows-xl;
+  animation: animStar 150s linear infinite;
+  border-radius: 50%;
+}
+#stars5:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  box-shadow: $shadows-xl;
+  border-radius: 50%;
+}
+
+#title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: "lato", sans-serif;
+  font-weight: 300;
+  font-size: 50px;
+  letter-spacing: 10px;
+  margin-top: -60px;
+  padding-left: 10px;
+}
+#title span {
+  background: -webkit-linear-gradient(white, #38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
