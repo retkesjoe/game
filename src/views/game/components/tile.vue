@@ -1,16 +1,25 @@
 <template>
-  <div class="tile" @click="$event.target.classList.toggle('active')"></div>
+  <div class="tile" @click="setAdjacentTiles"></div>
 </template>
 
 <script lang="ts">
-export default {};
+export default {
+  methods: {
+    setAdjacentTiles(item: Element): void {
+      console.log(item);
+      console.log("store commit: ", this.$store.commit("adjTiles", item.target.dataset.id));
+      /* console.log(this.store);
+      this.$store.commit("adjTiles", 1); */
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .tile {
   background-color: #fff083;
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   border: 1px solid #ffc880;
   border-radius: 5px;
 

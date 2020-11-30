@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <tile v-for="(tile, index) in row" :key="index"></tile>
+    <tile v-for="(tile, index) in row" :key="index" :class="{ active: tile == 1 }" :data-id="rowindex * 5 + index"></tile>
   </div>
 </template>
 
@@ -8,9 +8,8 @@
 import Tile from "./tile";
 
 export default {
-  props: ["row"],
+  props: ["row", "rowindex"],
   data(): Record<string, unknown> {
-    console.log(this.row);
     return this.row;
   },
   components: {
@@ -23,7 +22,8 @@ export default {
 .row {
   display: flex;
   justify-content: space-between;
-  width: calc(5 * 64px + 4 * 4px);
+  width: calc(5 * 50px + 4 * 4px);
   flex-wrap: wrap;
+  margin: 4px;
 }
 </style>

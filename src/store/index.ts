@@ -1,11 +1,11 @@
 import { createStore } from "vuex";
-import Example from "./game/game-board";
+import GameBoard from "./game/game-board";
 
 const store = createStore({
   state: {
-    gameBoard: Example.state,
+    gameBoard: GameBoard.state,
   },
-  mutations: {},
+  mutations: GameBoard.mutations,
   actions: {},
   modules: {},
 });

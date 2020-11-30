@@ -1,10 +1,10 @@
 <template>
-  <h1 class="game-board">Hello world</h1>
-  <row v-for="(row, index) in gameBoard" :key="index" :row="row"></row>
+  <h1 class="game-board">Lights Out Puzzle</h1>
+  <row v-for="(row, index) in gameBoard" :key="index" :row="row" :rowindex="index"></row>
 </template>
 
 <style lang="scss">
-.start-game {
+.game-board {
   color: gold;
 }
 </style>

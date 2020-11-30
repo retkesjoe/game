@@ -1,7 +1,7 @@
 <script lang="ts">
 type GameBoardGrid = Array<Array<number>>;
 
-class GameBoard {
+class Game {
   MAXIMUM_TURNED_ON_LIGHTS_AT_START = 5;
   ROW_NUMBERS = 5;
   COL_NUMBERS = 5;
@@ -48,10 +48,39 @@ class GameBoard {
       }
     }
   }
+
+  setAdjacentTiles(state: Record<string, unknown>, tileId: number): void {
+    const adjacentRows = [-1, 0, 0, 1];
+    const adjacentColumns = [0, -1, 1, 0];
+    const selectedTileRow = Math.floor(tileId / this.ROW_NUMBERS);
+    const selectedTileColumn = Math.floor(tileId % this.COL_NUMBERS);
+
+    for (let i = 0; i < 4; ++i) {
+      let adjacentRow = selectedTileRow + adjacentRows[i];
+      let adjacentColumn = selectedTileColumn + adjacentColumns[i];
+
+      if (adjacentRow >= 0 && adjacentColumn >= 0 && adjacentRow < this.ROW_NUMBERS && adjacentColumn < this.COL_NUMBERS) {
+        let adjacentTile = state.gameBoard[adjacentRow][adjacentColumn];
+
+        if (adjacentTile === 0) {
+          state.gameBoard[adjacentRow][adjacentColumn] = 1;
+        } else {
+          state.gameBoard[adjacentRow][adjacentColumn] = 0;
+        }
+      }
+    }
+  }
 }
 
-const Example = {
-  state: new GameBoard().gameBoard,
+const gameBoardInstance = new Game();
+
+const GameBoard = {
+  state: gameBoardInstance.gameBoard,
+  mutations: {
+    adjTiles(state: GameBoardGrid, tileId: number): void {
+      gameBoardInstance.setAdjacentTiles(state, tileId);
+    },
+  },
 };
-export default Example;
+export default GameBoard;
 </script>

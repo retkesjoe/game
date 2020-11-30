@@ -1,2 +1,18 @@
-☐ Splashscreen styling.
-☐ Code refactor.
+Todos:
+  ☐ Write documentation.
+  ☐ Splashscreen styling.
+  ☐ Code refactor.
+  ☐ Create endgame screen.
+  ☐ Rename functions, components, variables.
+  ☐ Remove unnecessary codes.
+  ☐ Write better statemanagement and mutation.
+  ☐ Split the code more.
+
+New features:
+  ☐ Timer.
+  ☐ Leaderboard.
+  ☐ New board sizes.
+  ☐ Info modal on the splashscreen.
+  ☐ Responsive design.
+  ☐ Only the light off tiles clickable.
+  ☐ Puzzle solver.
